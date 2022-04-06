@@ -48,9 +48,15 @@ class PictureController extends Controller
             $picture->title = $apiPicture->title;
             $picture->new_title = $new_title;
             $picture->date = $apiPicture->date;
-            $picture->copyright = $apiPicture->copyright;
             $picture->url = $apiPicture->url;
             $picture->hdurl = $apiPicture->hdurl;
+
+            // Check to see if the copyright field has been returned.
+            if (isset($apiPicture->copyright)) {
+                $picture->copyright = $apiPicture->copyright;
+            } else {
+                $picture->copyright = '';
+            }
 
             $picture->save();
         }
