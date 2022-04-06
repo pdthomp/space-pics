@@ -30,7 +30,7 @@
                 <a target="_blank" href="{!! $picture->url !!}">
                     <img src="{!! $picture->url !!}" alt="Cinque Terre" width="600" height="400">
                 </a>
-                <div class="desc">{!! $picture->title !!}</div>
+                <div class="desc">{!! $picture->new_title !!}</div>
             </div>
         @empty
             No pictures found
